@@ -3,9 +3,21 @@ pragma solidity ^0.5.16;
 import "./SafeMath.sol";
 
 
-//TODO:
-
-
+//contract
+contract LetContract {
+    
+    using SafeMath for uint256;
+    address private loxContractAddress;
+    Node[] private buyerList;
+    
+    struct Node {
+        address payable buyer;
+        uint256 value;
+        uint blockNumber;
+    }
+    
+    //TODO::
+}    
 
 
 //external interface
