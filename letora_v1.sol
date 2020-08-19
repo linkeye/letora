@@ -22,6 +22,8 @@ contract LetContract {
         loxToken = IERC20(loxContractAddress);
     }
     
+    event Transfer(address indexed _to, uint256 _value, uint256 _blockNumber);
+    
     //TODO::
 }    
 
