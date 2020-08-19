@@ -16,6 +16,12 @@ contract LetContract {
         uint blockNumber;
     }
     
+    constructor(address loxContractAddress) public {
+        // Sets the contract's owner as the address that deployed the contract.
+        owner = msg.sender;
+        loxToken = IERC20(loxContractAddress);
+    }
+    
     //TODO::
 }    
 
