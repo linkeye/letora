@@ -23,7 +23,8 @@ contract LetContract {
     }
     
     event Transfer(address indexed _to, uint256 _value, uint256 _blockNumber);
-    
+    event EthSettle(address indexed _buyer, uint256 _value, uint256 _blockNumber);
+    event TokenSettle(address indexed _buyer, uint256 _value);
     //TODO::
 }    
 
