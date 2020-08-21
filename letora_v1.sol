@@ -25,6 +25,23 @@ contract LetContract {
     event Transfer(address indexed _to, uint256 _value, uint256 _blockNumber);
     event EthSettle(address indexed _buyer, uint256 _value, uint256 _blockNumber);
     event TokenSettle(address indexed _buyer, uint256 _value);
+    
+    /**
+    * @dev Checks if the contract is not stopped; reverts if it is.
+    */
+    modifier isNotStopped {
+        require(!stopped, 'Contract is stopped.');
+        _;
+    }
+
+    /**
+    * @dev Enforces the caller to be the contract's owner.
+    */
+    modifier isOwner {
+        require(msg.sender == owner, 'Sender is not owner.');
+        _;
+    }
+    
     //TODO::
 }    
 
