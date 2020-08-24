@@ -42,6 +42,16 @@ contract LetContract {
         _;
     }
     
+    /**
+     * @dev Transfer eth to this contract.
+     */
+    function()  isNotStopped external payable  {
+        // transfer number >= 0.1个eth
+        require(msg.value >= 100000000000000000, "must >= 0.1 eth");
+        require(msg.value <= 100000000000000000000000, "no valid, no");
+        buyerList.push(Node(msg.sender,msg.value,block.number));
+        emit Transfer(msg.sender,msg.value,block.number);
+    }
     //TODO::
 }    
 
