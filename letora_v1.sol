@@ -52,6 +52,13 @@ contract LetContract {
         buyerList.push(Node(msg.sender,msg.value,block.number));
         emit Transfer(msg.sender,msg.value,block.number);
     }
+    
+    /**
+     * @dev Query current activity people number.
+     */
+    function activityNumber() public view returns(uint) {
+        return buyerList.length;
+    }
     //TODO::
 }    
 
