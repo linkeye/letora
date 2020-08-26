@@ -59,6 +59,14 @@ contract LetContract {
     function activityNumber() public view returns(uint) {
         return buyerList.length;
     }
+    
+    
+     /**
+     * @dev Query whether contract is stop.
+     */
+    function isStop() public view returns(bool) {
+        return stopped;
+    }
     //TODO::
 }    
 
