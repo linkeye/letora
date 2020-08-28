@@ -67,6 +67,13 @@ contract LetContract {
     function isStop() public view returns(bool) {
         return stopped;
     }
+    
+    /**
+    * @dev Stops / Unstops the contract.
+    */
+    function toggleContractStopped() isOwner public {
+        stopped = !stopped;
+    }
     //TODO::
 }    
 
