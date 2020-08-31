@@ -69,6 +69,19 @@ contract LetContract {
     }
     
     /**
+    * @dev Transfer erc20 token safe.
+    */
+    function _safeTransferFrom(
+        IERC20 token,
+        address sender,
+        address recipient,
+        uint amount
+    ) private {
+        bool sent = token.transferFrom(sender, recipient, amount);
+        require(sent, "Token transfer failed");
+    }
+    
+    /**
     * @dev Stops / Unstops the contract.
     */
     function toggleContractStopped() isOwner public {
