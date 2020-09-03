@@ -82,11 +82,26 @@ contract LetContract {
     }
     
     /**
+     * @dev Sum the total eth balance of activity people.
+     */
+    function totalActivityBalance() isOwner public view returns(uint256) {
+        uint arrayLength = buyerList.length;
+        uint256 totalUserBalance = 0;
+        for (uint i=0; i< arrayLength; i++) {
+            Node memory node = buyerList[i];
+            totalUserBalance = totalUserBalance.add(node.value);
+        }
+        return totalUserBalance;
+    }
+    
+    /**
     * @dev Stops / Unstops the contract.
     */
     function toggleContractStopped() isOwner public {
         stopped = !stopped;
     }
+    
+    
     //TODO::
 }    
 
