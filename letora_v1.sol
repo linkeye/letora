@@ -7,6 +7,11 @@ import "./SafeMath.sol";
 contract LetContract {
     
     using SafeMath for uint256;
+    uint private loxRate = 1500;
+    // contract default stop when created.
+    bool private stopped = true;
+    address private owner;
+    IERC20 public loxToken;
     address private loxContractAddress;
     Node[] private buyerList;
     
